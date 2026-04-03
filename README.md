@@ -25,7 +25,7 @@ bash scripts/train.sh
 Test our method:
 
 ```bash
-bash scripts/eval_PAP.sh
+bash scripts/eval.sh
 ```
 
 
