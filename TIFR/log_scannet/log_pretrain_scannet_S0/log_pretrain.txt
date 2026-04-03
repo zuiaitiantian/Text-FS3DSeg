@@ -1,0 +1,817 @@
+------------ Options -------------
+base_widths: [128, 64]
+batch_size: 16
+cvfold: 0
+data_path: ./datasets/ScanNet/blocks_bs1_s1
+dataset: scannet
+dgcnn_k: 20
+dgcnn_mlp_widths: [512, 256]
+dist_method: euclidean
+edgeconv_widths: [[64, 64], [64, 64], [64, 64]]
+embedding_type: word2vec
+eval_interval: 3
+gamma: 0.5
+generator_lr: 0.0002
+gmm_dropout: 0.1
+gmm_weight: 0.1
+k_connect: 200
+k_shot: 1
+log_dir: ./log_scannet/log_pretrain_scannet_S0
+lr: 0.001
+model_checkpoint_path: None
+n_episode_test: 100
+n_iters: 50
+n_queries: 1
+n_subprototypes: 100
+n_way: 2
+n_workers: 16
+noise_dim: 300
+output_dim: 64
+pc_attribs: xyzrgbXYZ
+pc_augm: True
+pc_augm_color: 0
+pc_augm_jitter: 1
+pc_augm_mirror_prob: 0
+pc_augm_rot: 1
+pc_augm_scale: 1.25
+pc_augm_shift: 0.1
+pc_in_dim: 9
+pc_npts: 2048
+phase: pretrain
+pretrain_checkpoint_path: None
+pretrain_gamma: 0.5
+pretrain_lr: 0.001
+pretrain_step_size: 50
+pretrain_weight_decay: 0.0001
+save_path: ./log_scannet/
+sigma: 1.0
+step_size: 5000
+train_dim: 320
+trans_lr: 0.0001
+use_align: False
+use_attention: False
+use_high_dgcnn: True
+use_linear_proj: False
+use_supervise_prototype: False
+use_transformer: False
+use_zero: False
+-------------- End ----------------
+
+=== Pre-train Dataset (classes: [1, 4, 8, 9, 11, 15, 16, 17, 18, 20]) | Train: 23790 blocks | Valid: 2636 blocks ===
+=====[Train] Epoch: 0 | Iter: 99 | Loss: 1.1671 =====
+=====[Train] Epoch: 0 | Iter: 199 | Loss: 1.1524 =====
+=====[Train] Epoch: 0 | Iter: 299 | Loss: 1.0021 =====
+=====[Train] Epoch: 0 | Iter: 399 | Loss: 0.8443 =====
+=====[Train] Epoch: 0 | Iter: 499 | Loss: 1.0724 =====
+=====[Train] Epoch: 0 | Iter: 599 | Loss: 0.7876 =====
+=====[Train] Epoch: 0 | Iter: 699 | Loss: 1.0713 =====
+=====[Train] Epoch: 0 | Iter: 799 | Loss: 0.8738 =====
+=====[Train] Epoch: 0 | Iter: 899 | Loss: 1.1236 =====
+=====[Train] Epoch: 0 | Iter: 999 | Loss: 0.9564 =====
+=====[Train] Epoch: 0 | Iter: 1099 | Loss: 0.8623 =====
+=====[Train] Epoch: 0 | Iter: 1199 | Loss: 0.8988 =====
+=====[Train] Epoch: 0 | Iter: 1299 | Loss: 1.3480 =====
+=====[Train] Epoch: 0 | Iter: 1399 | Loss: 0.6937 =====
+=====[Train] Epoch: 1 | Iter: 99 | Loss: 0.8044 =====
+=====[Train] Epoch: 1 | Iter: 199 | Loss: 0.6244 =====
+=====[Train] Epoch: 1 | Iter: 299 | Loss: 0.8853 =====
+=====[Train] Epoch: 1 | Iter: 399 | Loss: 0.9823 =====
+=====[Train] Epoch: 1 | Iter: 499 | Loss: 0.9765 =====
+=====[Train] Epoch: 1 | Iter: 599 | Loss: 1.1342 =====
+=====[Train] Epoch: 1 | Iter: 699 | Loss: 0.9055 =====
+=====[Train] Epoch: 1 | Iter: 799 | Loss: 0.6440 =====
+=====[Train] Epoch: 1 | Iter: 899 | Loss: 0.9663 =====
+=====[Train] Epoch: 1 | Iter: 999 | Loss: 0.8382 =====
+=====[Train] Epoch: 1 | Iter: 1099 | Loss: 0.9759 =====
+=====[Train] Epoch: 1 | Iter: 1199 | Loss: 0.6447 =====
+=====[Train] Epoch: 1 | Iter: 1299 | Loss: 0.7424 =====
+=====[Train] Epoch: 1 | Iter: 1399 | Loss: 0.8739 =====
+=====[Train] Epoch: 2 | Iter: 99 | Loss: 0.8384 =====
+=====[Train] Epoch: 2 | Iter: 199 | Loss: 0.9445 =====
+=====[Train] Epoch: 2 | Iter: 299 | Loss: 0.7893 =====
+=====[Train] Epoch: 2 | Iter: 399 | Loss: 0.8186 =====
+=====[Train] Epoch: 2 | Iter: 499 | Loss: 0.9333 =====
+=====[Train] Epoch: 2 | Iter: 599 | Loss: 0.7927 =====
+=====[Train] Epoch: 2 | Iter: 699 | Loss: 0.7943 =====
+=====[Train] Epoch: 2 | Iter: 799 | Loss: 0.7187 =====
+=====[Train] Epoch: 2 | Iter: 899 | Loss: 0.7022 =====
+=====[Train] Epoch: 2 | Iter: 999 | Loss: 0.9010 =====
+=====[Train] Epoch: 2 | Iter: 1099 | Loss: 0.8027 =====
+=====[Train] Epoch: 2 | Iter: 1199 | Loss: 0.6688 =====
+=====[Train] Epoch: 2 | Iter: 1299 | Loss: 0.6583 =====
+=====[Train] Epoch: 2 | Iter: 1399 | Loss: 0.7540 =====
+===== EPOCH [2]: Accuracy: 0.718578 | mIoU: 0.236480 =====
+
+*******************Model Saved*******************
+=====Best IoU Is: 0.236480 =====
+=====[Train] Epoch: 3 | Iter: 99 | Loss: 0.6765 =====
+=====[Train] Epoch: 3 | Iter: 199 | Loss: 0.7787 =====
+=====[Train] Epoch: 3 | Iter: 299 | Loss: 0.7673 =====
+=====[Train] Epoch: 3 | Iter: 399 | Loss: 0.6116 =====
+=====[Train] Epoch: 3 | Iter: 499 | Loss: 0.5826 =====
+=====[Train] Epoch: 3 | Iter: 599 | Loss: 0.7056 =====
+=====[Train] Epoch: 3 | Iter: 699 | Loss: 0.7124 =====
+=====[Train] Epoch: 3 | Iter: 799 | Loss: 0.6045 =====
+=====[Train] Epoch: 3 | Iter: 899 | Loss: 0.9352 =====
+=====[Train] Epoch: 3 | Iter: 999 | Loss: 0.7037 =====
+=====[Train] Epoch: 3 | Iter: 1099 | Loss: 0.8517 =====
+=====[Train] Epoch: 3 | Iter: 1199 | Loss: 0.7432 =====
+=====[Train] Epoch: 3 | Iter: 1299 | Loss: 0.8224 =====
+=====[Train] Epoch: 3 | Iter: 1399 | Loss: 0.6810 =====
+=====[Train] Epoch: 4 | Iter: 99 | Loss: 0.7770 =====
+=====[Train] Epoch: 4 | Iter: 199 | Loss: 0.5753 =====
+=====[Train] Epoch: 4 | Iter: 299 | Loss: 0.6732 =====
+=====[Train] Epoch: 4 | Iter: 399 | Loss: 0.4240 =====
+=====[Train] Epoch: 4 | Iter: 499 | Loss: 0.6329 =====
+=====[Train] Epoch: 4 | Iter: 599 | Loss: 0.7635 =====
+=====[Train] Epoch: 4 | Iter: 699 | Loss: 0.6083 =====
+=====[Train] Epoch: 4 | Iter: 799 | Loss: 0.8163 =====
+=====[Train] Epoch: 4 | Iter: 899 | Loss: 0.7171 =====
+=====[Train] Epoch: 4 | Iter: 999 | Loss: 0.5605 =====
+=====[Train] Epoch: 4 | Iter: 1099 | Loss: 0.7336 =====
+=====[Train] Epoch: 4 | Iter: 1199 | Loss: 0.7954 =====
+=====[Train] Epoch: 4 | Iter: 1299 | Loss: 0.6647 =====
+=====[Train] Epoch: 4 | Iter: 1399 | Loss: 0.7732 =====
+=====[Train] Epoch: 5 | Iter: 99 | Loss: 0.5898 =====
+=====[Train] Epoch: 5 | Iter: 199 | Loss: 0.7238 =====
+=====[Train] Epoch: 5 | Iter: 299 | Loss: 0.6613 =====
+=====[Train] Epoch: 5 | Iter: 399 | Loss: 0.6900 =====
+=====[Train] Epoch: 5 | Iter: 499 | Loss: 0.9269 =====
+=====[Train] Epoch: 5 | Iter: 599 | Loss: 0.8365 =====
+=====[Train] Epoch: 5 | Iter: 699 | Loss: 0.6524 =====
+=====[Train] Epoch: 5 | Iter: 799 | Loss: 0.8426 =====
+=====[Train] Epoch: 5 | Iter: 899 | Loss: 0.8659 =====
+=====[Train] Epoch: 5 | Iter: 999 | Loss: 0.5061 =====
+=====[Train] Epoch: 5 | Iter: 1099 | Loss: 0.6843 =====
+=====[Train] Epoch: 5 | Iter: 1199 | Loss: 0.4611 =====
+=====[Train] Epoch: 5 | Iter: 1299 | Loss: 0.6467 =====
+=====[Train] Epoch: 5 | Iter: 1399 | Loss: 1.0598 =====
+===== EPOCH [5]: Accuracy: 0.748265 | mIoU: 0.254980 =====
+
+*******************Model Saved*******************
+=====Best IoU Is: 0.254980 =====
+=====[Train] Epoch: 6 | Iter: 99 | Loss: 0.6214 =====
+=====[Train] Epoch: 6 | Iter: 199 | Loss: 0.5279 =====
+=====[Train] Epoch: 6 | Iter: 299 | Loss: 0.6435 =====
+=====[Train] Epoch: 6 | Iter: 399 | Loss: 0.6355 =====
+=====[Train] Epoch: 6 | Iter: 499 | Loss: 0.6656 =====
+=====[Train] Epoch: 6 | Iter: 599 | Loss: 0.5104 =====
+=====[Train] Epoch: 6 | Iter: 699 | Loss: 0.6140 =====
+=====[Train] Epoch: 6 | Iter: 799 | Loss: 0.7126 =====
+=====[Train] Epoch: 6 | Iter: 899 | Loss: 0.7166 =====
+=====[Train] Epoch: 6 | Iter: 999 | Loss: 0.6218 =====
+=====[Train] Epoch: 6 | Iter: 1099 | Loss: 0.7022 =====
+=====[Train] Epoch: 6 | Iter: 1199 | Loss: 0.7330 =====
+=====[Train] Epoch: 6 | Iter: 1299 | Loss: 0.5150 =====
+=====[Train] Epoch: 6 | Iter: 1399 | Loss: 0.7831 =====
+=====[Train] Epoch: 7 | Iter: 99 | Loss: 0.5742 =====
+=====[Train] Epoch: 7 | Iter: 199 | Loss: 0.8248 =====
+=====[Train] Epoch: 7 | Iter: 299 | Loss: 0.6179 =====
+=====[Train] Epoch: 7 | Iter: 399 | Loss: 0.8322 =====
+=====[Train] Epoch: 7 | Iter: 499 | Loss: 0.6049 =====
+=====[Train] Epoch: 7 | Iter: 599 | Loss: 0.7205 =====
+=====[Train] Epoch: 7 | Iter: 699 | Loss: 0.6793 =====
+=====[Train] Epoch: 7 | Iter: 799 | Loss: 0.6264 =====
+=====[Train] Epoch: 7 | Iter: 899 | Loss: 0.7675 =====
+=====[Train] Epoch: 7 | Iter: 999 | Loss: 0.7325 =====
+=====[Train] Epoch: 7 | Iter: 1099 | Loss: 1.0019 =====
+=====[Train] Epoch: 7 | Iter: 1199 | Loss: 0.6088 =====
+=====[Train] Epoch: 7 | Iter: 1299 | Loss: 0.6826 =====
+=====[Train] Epoch: 7 | Iter: 1399 | Loss: 0.6550 =====
+=====[Train] Epoch: 8 | Iter: 99 | Loss: 0.8462 =====
+=====[Train] Epoch: 8 | Iter: 199 | Loss: 0.5419 =====
+=====[Train] Epoch: 8 | Iter: 299 | Loss: 0.8109 =====
+=====[Train] Epoch: 8 | Iter: 399 | Loss: 0.6174 =====
+=====[Train] Epoch: 8 | Iter: 499 | Loss: 0.5314 =====
+=====[Train] Epoch: 8 | Iter: 599 | Loss: 0.7703 =====
+=====[Train] Epoch: 8 | Iter: 699 | Loss: 0.6324 =====
+=====[Train] Epoch: 8 | Iter: 799 | Loss: 0.7171 =====
+=====[Train] Epoch: 8 | Iter: 899 | Loss: 0.6925 =====
+=====[Train] Epoch: 8 | Iter: 999 | Loss: 0.5555 =====
+=====[Train] Epoch: 8 | Iter: 1099 | Loss: 0.6472 =====
+=====[Train] Epoch: 8 | Iter: 1199 | Loss: 0.7168 =====
+=====[Train] Epoch: 8 | Iter: 1299 | Loss: 0.5440 =====
+=====[Train] Epoch: 8 | Iter: 1399 | Loss: 0.6740 =====
+===== EPOCH [8]: Accuracy: 0.757684 | mIoU: 0.304229 =====
+
+*******************Model Saved*******************
+=====Best IoU Is: 0.304229 =====
+=====[Train] Epoch: 9 | Iter: 99 | Loss: 0.8024 =====
+=====[Train] Epoch: 9 | Iter: 199 | Loss: 0.6384 =====
+=====[Train] Epoch: 9 | Iter: 299 | Loss: 0.7035 =====
+=====[Train] Epoch: 9 | Iter: 399 | Loss: 0.6356 =====
+=====[Train] Epoch: 9 | Iter: 499 | Loss: 0.5590 =====
+=====[Train] Epoch: 9 | Iter: 599 | Loss: 0.8004 =====
+=====[Train] Epoch: 9 | Iter: 699 | Loss: 0.5838 =====
+=====[Train] Epoch: 9 | Iter: 799 | Loss: 0.5569 =====
+=====[Train] Epoch: 9 | Iter: 899 | Loss: 0.5198 =====
+=====[Train] Epoch: 9 | Iter: 999 | Loss: 0.5194 =====
+=====[Train] Epoch: 9 | Iter: 1099 | Loss: 0.6439 =====
+=====[Train] Epoch: 9 | Iter: 1199 | Loss: 0.7357 =====
+=====[Train] Epoch: 9 | Iter: 1299 | Loss: 0.7909 =====
+=====[Train] Epoch: 9 | Iter: 1399 | Loss: 0.9159 =====
+=====[Train] Epoch: 10 | Iter: 99 | Loss: 0.8033 =====
+=====[Train] Epoch: 10 | Iter: 199 | Loss: 0.6985 =====
+=====[Train] Epoch: 10 | Iter: 299 | Loss: 0.7103 =====
+=====[Train] Epoch: 10 | Iter: 399 | Loss: 0.7268 =====
+=====[Train] Epoch: 10 | Iter: 499 | Loss: 0.6976 =====
+=====[Train] Epoch: 10 | Iter: 599 | Loss: 0.6818 =====
+=====[Train] Epoch: 10 | Iter: 699 | Loss: 0.6752 =====
+=====[Train] Epoch: 10 | Iter: 799 | Loss: 0.7717 =====
+=====[Train] Epoch: 10 | Iter: 899 | Loss: 0.9185 =====
+=====[Train] Epoch: 10 | Iter: 999 | Loss: 0.6308 =====
+=====[Train] Epoch: 10 | Iter: 1099 | Loss: 0.5837 =====
+=====[Train] Epoch: 10 | Iter: 1199 | Loss: 0.6890 =====
+=====[Train] Epoch: 10 | Iter: 1299 | Loss: 0.9745 =====
+=====[Train] Epoch: 10 | Iter: 1399 | Loss: 0.5897 =====
+=====[Train] Epoch: 11 | Iter: 99 | Loss: 0.8131 =====
+=====[Train] Epoch: 11 | Iter: 199 | Loss: 0.6771 =====
+=====[Train] Epoch: 11 | Iter: 299 | Loss: 0.4880 =====
+=====[Train] Epoch: 11 | Iter: 399 | Loss: 0.6499 =====
+=====[Train] Epoch: 11 | Iter: 499 | Loss: 0.6549 =====
+=====[Train] Epoch: 11 | Iter: 599 | Loss: 0.5811 =====
+=====[Train] Epoch: 11 | Iter: 699 | Loss: 0.6446 =====
+=====[Train] Epoch: 11 | Iter: 799 | Loss: 0.4779 =====
+=====[Train] Epoch: 11 | Iter: 899 | Loss: 0.5849 =====
+=====[Train] Epoch: 11 | Iter: 999 | Loss: 0.5702 =====
+=====[Train] Epoch: 11 | Iter: 1099 | Loss: 0.6949 =====
+=====[Train] Epoch: 11 | Iter: 1199 | Loss: 0.9056 =====
+=====[Train] Epoch: 11 | Iter: 1299 | Loss: 0.7774 =====
+=====[Train] Epoch: 11 | Iter: 1399 | Loss: 0.7101 =====
+===== EPOCH [11]: Accuracy: 0.754513 | mIoU: 0.332816 =====
+
+*******************Model Saved*******************
+=====Best IoU Is: 0.332816 =====
+=====[Train] Epoch: 12 | Iter: 99 | Loss: 0.7630 =====
+=====[Train] Epoch: 12 | Iter: 199 | Loss: 0.6334 =====
+=====[Train] Epoch: 12 | Iter: 299 | Loss: 0.5303 =====
+=====[Train] Epoch: 12 | Iter: 399 | Loss: 0.6796 =====
+=====[Train] Epoch: 12 | Iter: 499 | Loss: 1.0302 =====
+=====[Train] Epoch: 12 | Iter: 599 | Loss: 0.6070 =====
+=====[Train] Epoch: 12 | Iter: 699 | Loss: 0.5726 =====
+=====[Train] Epoch: 12 | Iter: 799 | Loss: 0.8293 =====
+=====[Train] Epoch: 12 | Iter: 899 | Loss: 0.8746 =====
+=====[Train] Epoch: 12 | Iter: 999 | Loss: 0.7356 =====
+=====[Train] Epoch: 12 | Iter: 1099 | Loss: 0.6391 =====
+=====[Train] Epoch: 12 | Iter: 1199 | Loss: 0.6114 =====
+=====[Train] Epoch: 12 | Iter: 1299 | Loss: 0.7888 =====
+=====[Train] Epoch: 12 | Iter: 1399 | Loss: 0.7491 =====
+=====[Train] Epoch: 13 | Iter: 99 | Loss: 0.6034 =====
+=====[Train] Epoch: 13 | Iter: 199 | Loss: 0.6614 =====
+=====[Train] Epoch: 13 | Iter: 299 | Loss: 0.7348 =====
+=====[Train] Epoch: 13 | Iter: 399 | Loss: 0.4669 =====
+=====[Train] Epoch: 13 | Iter: 499 | Loss: 0.7573 =====
+=====[Train] Epoch: 13 | Iter: 599 | Loss: 0.7800 =====
+=====[Train] Epoch: 13 | Iter: 699 | Loss: 0.6189 =====
+=====[Train] Epoch: 13 | Iter: 799 | Loss: 0.5743 =====
+=====[Train] Epoch: 13 | Iter: 899 | Loss: 0.5057 =====
+=====[Train] Epoch: 13 | Iter: 999 | Loss: 0.5588 =====
+=====[Train] Epoch: 13 | Iter: 1099 | Loss: 0.7393 =====
+=====[Train] Epoch: 13 | Iter: 1199 | Loss: 0.6794 =====
+=====[Train] Epoch: 13 | Iter: 1299 | Loss: 0.6874 =====
+=====[Train] Epoch: 13 | Iter: 1399 | Loss: 0.6507 =====
+=====[Train] Epoch: 14 | Iter: 99 | Loss: 0.6755 =====
+=====[Train] Epoch: 14 | Iter: 199 | Loss: 0.6411 =====
+=====[Train] Epoch: 14 | Iter: 299 | Loss: 0.6233 =====
+=====[Train] Epoch: 14 | Iter: 399 | Loss: 0.5776 =====
+=====[Train] Epoch: 14 | Iter: 499 | Loss: 0.5341 =====
+=====[Train] Epoch: 14 | Iter: 599 | Loss: 0.7802 =====
+=====[Train] Epoch: 14 | Iter: 699 | Loss: 0.5629 =====
+=====[Train] Epoch: 14 | Iter: 799 | Loss: 0.5366 =====
+=====[Train] Epoch: 14 | Iter: 899 | Loss: 0.6717 =====
+=====[Train] Epoch: 14 | Iter: 999 | Loss: 0.6533 =====
+=====[Train] Epoch: 14 | Iter: 1099 | Loss: 0.6312 =====
+=====[Train] Epoch: 14 | Iter: 1199 | Loss: 0.6396 =====
+=====[Train] Epoch: 14 | Iter: 1299 | Loss: 0.5163 =====
+=====[Train] Epoch: 14 | Iter: 1399 | Loss: 0.5974 =====
+===== EPOCH [14]: Accuracy: 0.766106 | mIoU: 0.328968 =====
+
+=====Best IoU Is: 0.332816 =====
+=====[Train] Epoch: 15 | Iter: 99 | Loss: 0.5790 =====
+=====[Train] Epoch: 15 | Iter: 199 | Loss: 0.5159 =====
+=====[Train] Epoch: 15 | Iter: 299 | Loss: 0.5669 =====
+=====[Train] Epoch: 15 | Iter: 399 | Loss: 0.7312 =====
+=====[Train] Epoch: 15 | Iter: 499 | Loss: 0.6507 =====
+=====[Train] Epoch: 15 | Iter: 599 | Loss: 0.6915 =====
+=====[Train] Epoch: 15 | Iter: 699 | Loss: 0.7115 =====
+=====[Train] Epoch: 15 | Iter: 799 | Loss: 0.8343 =====
+=====[Train] Epoch: 15 | Iter: 899 | Loss: 0.5848 =====
+=====[Train] Epoch: 15 | Iter: 999 | Loss: 0.6623 =====
+=====[Train] Epoch: 15 | Iter: 1099 | Loss: 0.6336 =====
+=====[Train] Epoch: 15 | Iter: 1199 | Loss: 0.5878 =====
+=====[Train] Epoch: 15 | Iter: 1299 | Loss: 0.5862 =====
+=====[Train] Epoch: 15 | Iter: 1399 | Loss: 0.4179 =====
+=====[Train] Epoch: 16 | Iter: 99 | Loss: 0.7393 =====
+=====[Train] Epoch: 16 | Iter: 199 | Loss: 0.5942 =====
+=====[Train] Epoch: 16 | Iter: 299 | Loss: 0.8263 =====
+=====[Train] Epoch: 16 | Iter: 399 | Loss: 0.5961 =====
+=====[Train] Epoch: 16 | Iter: 499 | Loss: 0.5414 =====
+=====[Train] Epoch: 16 | Iter: 599 | Loss: 0.8577 =====
+=====[Train] Epoch: 16 | Iter: 699 | Loss: 0.4973 =====
+=====[Train] Epoch: 16 | Iter: 799 | Loss: 0.7268 =====
+=====[Train] Epoch: 16 | Iter: 899 | Loss: 0.7923 =====
+=====[Train] Epoch: 16 | Iter: 999 | Loss: 0.8188 =====
+=====[Train] Epoch: 16 | Iter: 1099 | Loss: 0.6568 =====
+=====[Train] Epoch: 16 | Iter: 1199 | Loss: 0.5315 =====
+=====[Train] Epoch: 16 | Iter: 1299 | Loss: 0.5332 =====
+=====[Train] Epoch: 16 | Iter: 1399 | Loss: 0.8024 =====
+=====[Train] Epoch: 17 | Iter: 99 | Loss: 0.5082 =====
+=====[Train] Epoch: 17 | Iter: 199 | Loss: 0.6700 =====
+=====[Train] Epoch: 17 | Iter: 299 | Loss: 0.6200 =====
+=====[Train] Epoch: 17 | Iter: 399 | Loss: 0.7005 =====
+=====[Train] Epoch: 17 | Iter: 499 | Loss: 0.6834 =====
+=====[Train] Epoch: 17 | Iter: 599 | Loss: 0.6222 =====
+=====[Train] Epoch: 17 | Iter: 699 | Loss: 0.6554 =====
+=====[Train] Epoch: 17 | Iter: 799 | Loss: 0.6465 =====
+=====[Train] Epoch: 17 | Iter: 899 | Loss: 0.7439 =====
+=====[Train] Epoch: 17 | Iter: 999 | Loss: 0.4821 =====
+=====[Train] Epoch: 17 | Iter: 1099 | Loss: 0.5376 =====
+=====[Train] Epoch: 17 | Iter: 1199 | Loss: 0.5592 =====
+=====[Train] Epoch: 17 | Iter: 1299 | Loss: 0.5797 =====
+=====[Train] Epoch: 17 | Iter: 1399 | Loss: 0.6304 =====
+===== EPOCH [17]: Accuracy: 0.771881 | mIoU: 0.340567 =====
+
+*******************Model Saved*******************
+=====Best IoU Is: 0.340567 =====
+=====[Train] Epoch: 18 | Iter: 99 | Loss: 0.7146 =====
+=====[Train] Epoch: 18 | Iter: 199 | Loss: 0.7564 =====
+=====[Train] Epoch: 18 | Iter: 299 | Loss: 0.5003 =====
+=====[Train] Epoch: 18 | Iter: 399 | Loss: 0.6745 =====
+=====[Train] Epoch: 18 | Iter: 499 | Loss: 0.7733 =====
+=====[Train] Epoch: 18 | Iter: 599 | Loss: 0.5822 =====
+=====[Train] Epoch: 18 | Iter: 699 | Loss: 0.5692 =====
+=====[Train] Epoch: 18 | Iter: 799 | Loss: 0.7203 =====
+=====[Train] Epoch: 18 | Iter: 899 | Loss: 0.6955 =====
+=====[Train] Epoch: 18 | Iter: 999 | Loss: 0.6118 =====
+=====[Train] Epoch: 18 | Iter: 1099 | Loss: 0.6870 =====
+=====[Train] Epoch: 18 | Iter: 1199 | Loss: 0.5327 =====
+=====[Train] Epoch: 18 | Iter: 1299 | Loss: 0.4598 =====
+=====[Train] Epoch: 18 | Iter: 1399 | Loss: 0.5692 =====
+=====[Train] Epoch: 19 | Iter: 99 | Loss: 0.7638 =====
+=====[Train] Epoch: 19 | Iter: 199 | Loss: 0.4426 =====
+=====[Train] Epoch: 19 | Iter: 299 | Loss: 0.5343 =====
+=====[Train] Epoch: 19 | Iter: 399 | Loss: 0.6128 =====
+=====[Train] Epoch: 19 | Iter: 499 | Loss: 0.5199 =====
+=====[Train] Epoch: 19 | Iter: 599 | Loss: 0.4625 =====
+=====[Train] Epoch: 19 | Iter: 699 | Loss: 0.7036 =====
+=====[Train] Epoch: 19 | Iter: 799 | Loss: 0.7974 =====
+=====[Train] Epoch: 19 | Iter: 899 | Loss: 0.6275 =====
+=====[Train] Epoch: 19 | Iter: 999 | Loss: 0.5382 =====
+=====[Train] Epoch: 19 | Iter: 1099 | Loss: 0.5430 =====
+=====[Train] Epoch: 19 | Iter: 1199 | Loss: 0.7505 =====
+=====[Train] Epoch: 19 | Iter: 1299 | Loss: 0.7360 =====
+=====[Train] Epoch: 19 | Iter: 1399 | Loss: 0.6390 =====
+=====[Train] Epoch: 20 | Iter: 99 | Loss: 0.7472 =====
+=====[Train] Epoch: 20 | Iter: 199 | Loss: 0.7058 =====
+=====[Train] Epoch: 20 | Iter: 299 | Loss: 0.8545 =====
+=====[Train] Epoch: 20 | Iter: 399 | Loss: 0.7066 =====
+=====[Train] Epoch: 20 | Iter: 499 | Loss: 0.5711 =====
+=====[Train] Epoch: 20 | Iter: 599 | Loss: 0.4942 =====
+=====[Train] Epoch: 20 | Iter: 699 | Loss: 0.4981 =====
+=====[Train] Epoch: 20 | Iter: 799 | Loss: 0.8154 =====
+=====[Train] Epoch: 20 | Iter: 899 | Loss: 0.5872 =====
+=====[Train] Epoch: 20 | Iter: 999 | Loss: 0.5166 =====
+=====[Train] Epoch: 20 | Iter: 1099 | Loss: 0.6123 =====
+=====[Train] Epoch: 20 | Iter: 1199 | Loss: 0.7772 =====
+=====[Train] Epoch: 20 | Iter: 1299 | Loss: 0.7408 =====
+=====[Train] Epoch: 20 | Iter: 1399 | Loss: 0.5397 =====
+===== EPOCH [20]: Accuracy: 0.759089 | mIoU: 0.325642 =====
+
+=====Best IoU Is: 0.340567 =====
+=====[Train] Epoch: 21 | Iter: 99 | Loss: 0.5757 =====
+=====[Train] Epoch: 21 | Iter: 199 | Loss: 0.5351 =====
+=====[Train] Epoch: 21 | Iter: 299 | Loss: 0.5299 =====
+=====[Train] Epoch: 21 | Iter: 399 | Loss: 0.5490 =====
+=====[Train] Epoch: 21 | Iter: 499 | Loss: 0.5976 =====
+=====[Train] Epoch: 21 | Iter: 599 | Loss: 0.6228 =====
+=====[Train] Epoch: 21 | Iter: 699 | Loss: 0.5846 =====
+=====[Train] Epoch: 21 | Iter: 799 | Loss: 0.7121 =====
+=====[Train] Epoch: 21 | Iter: 899 | Loss: 0.5970 =====
+=====[Train] Epoch: 21 | Iter: 999 | Loss: 0.5881 =====
+=====[Train] Epoch: 21 | Iter: 1099 | Loss: 0.6454 =====
+=====[Train] Epoch: 21 | Iter: 1199 | Loss: 0.8231 =====
+=====[Train] Epoch: 21 | Iter: 1299 | Loss: 0.5373 =====
+=====[Train] Epoch: 21 | Iter: 1399 | Loss: 0.5435 =====
+=====[Train] Epoch: 22 | Iter: 99 | Loss: 0.6886 =====
+=====[Train] Epoch: 22 | Iter: 199 | Loss: 0.6322 =====
+=====[Train] Epoch: 22 | Iter: 299 | Loss: 0.4615 =====
+=====[Train] Epoch: 22 | Iter: 399 | Loss: 0.5311 =====
+=====[Train] Epoch: 22 | Iter: 499 | Loss: 0.4681 =====
+=====[Train] Epoch: 22 | Iter: 599 | Loss: 0.6193 =====
+=====[Train] Epoch: 22 | Iter: 699 | Loss: 0.5694 =====
+=====[Train] Epoch: 22 | Iter: 799 | Loss: 0.7794 =====
+=====[Train] Epoch: 22 | Iter: 899 | Loss: 0.6310 =====
+=====[Train] Epoch: 22 | Iter: 999 | Loss: 0.7796 =====
+=====[Train] Epoch: 22 | Iter: 1099 | Loss: 0.7211 =====
+=====[Train] Epoch: 22 | Iter: 1199 | Loss: 0.6021 =====
+=====[Train] Epoch: 22 | Iter: 1299 | Loss: 0.3956 =====
+=====[Train] Epoch: 22 | Iter: 1399 | Loss: 0.5669 =====
+=====[Train] Epoch: 23 | Iter: 99 | Loss: 0.6430 =====
+=====[Train] Epoch: 23 | Iter: 199 | Loss: 0.4562 =====
+=====[Train] Epoch: 23 | Iter: 299 | Loss: 0.6289 =====
+=====[Train] Epoch: 23 | Iter: 399 | Loss: 0.6625 =====
+=====[Train] Epoch: 23 | Iter: 499 | Loss: 0.5115 =====
+=====[Train] Epoch: 23 | Iter: 599 | Loss: 0.8334 =====
+=====[Train] Epoch: 23 | Iter: 699 | Loss: 0.5109 =====
+=====[Train] Epoch: 23 | Iter: 799 | Loss: 0.6387 =====
+=====[Train] Epoch: 23 | Iter: 899 | Loss: 0.7972 =====
+=====[Train] Epoch: 23 | Iter: 999 | Loss: 0.4546 =====
+=====[Train] Epoch: 23 | Iter: 1099 | Loss: 0.8251 =====
+=====[Train] Epoch: 23 | Iter: 1199 | Loss: 0.5845 =====
+=====[Train] Epoch: 23 | Iter: 1299 | Loss: 0.4560 =====
+=====[Train] Epoch: 23 | Iter: 1399 | Loss: 0.6619 =====
+===== EPOCH [23]: Accuracy: 0.753790 | mIoU: 0.345417 =====
+
+*******************Model Saved*******************
+=====Best IoU Is: 0.345417 =====
+=====[Train] Epoch: 24 | Iter: 99 | Loss: 0.8340 =====
+=====[Train] Epoch: 24 | Iter: 199 | Loss: 0.8153 =====
+=====[Train] Epoch: 24 | Iter: 299 | Loss: 0.6284 =====
+=====[Train] Epoch: 24 | Iter: 399 | Loss: 0.4891 =====
+=====[Train] Epoch: 24 | Iter: 499 | Loss: 0.4871 =====
+=====[Train] Epoch: 24 | Iter: 599 | Loss: 0.6739 =====
+=====[Train] Epoch: 24 | Iter: 699 | Loss: 0.6521 =====
+=====[Train] Epoch: 24 | Iter: 799 | Loss: 0.6583 =====
+=====[Train] Epoch: 24 | Iter: 899 | Loss: 0.6711 =====
+=====[Train] Epoch: 24 | Iter: 999 | Loss: 0.7177 =====
+=====[Train] Epoch: 24 | Iter: 1099 | Loss: 0.4232 =====
+=====[Train] Epoch: 24 | Iter: 1199 | Loss: 0.7761 =====
+=====[Train] Epoch: 24 | Iter: 1299 | Loss: 0.8613 =====
+=====[Train] Epoch: 24 | Iter: 1399 | Loss: 0.6806 =====
+=====[Train] Epoch: 25 | Iter: 99 | Loss: 0.5573 =====
+=====[Train] Epoch: 25 | Iter: 199 | Loss: 0.5838 =====
+=====[Train] Epoch: 25 | Iter: 299 | Loss: 0.5680 =====
+=====[Train] Epoch: 25 | Iter: 399 | Loss: 0.5172 =====
+=====[Train] Epoch: 25 | Iter: 499 | Loss: 0.3914 =====
+=====[Train] Epoch: 25 | Iter: 599 | Loss: 0.5463 =====
+=====[Train] Epoch: 25 | Iter: 699 | Loss: 0.6380 =====
+=====[Train] Epoch: 25 | Iter: 799 | Loss: 0.4870 =====
+=====[Train] Epoch: 25 | Iter: 899 | Loss: 0.4768 =====
+=====[Train] Epoch: 25 | Iter: 999 | Loss: 0.7758 =====
+=====[Train] Epoch: 25 | Iter: 1099 | Loss: 0.5618 =====
+=====[Train] Epoch: 25 | Iter: 1199 | Loss: 0.6692 =====
+=====[Train] Epoch: 25 | Iter: 1299 | Loss: 0.5203 =====
+=====[Train] Epoch: 25 | Iter: 1399 | Loss: 0.4536 =====
+=====[Train] Epoch: 26 | Iter: 99 | Loss: 0.6320 =====
+=====[Train] Epoch: 26 | Iter: 199 | Loss: 0.6349 =====
+=====[Train] Epoch: 26 | Iter: 299 | Loss: 0.6971 =====
+=====[Train] Epoch: 26 | Iter: 399 | Loss: 0.9557 =====
+=====[Train] Epoch: 26 | Iter: 499 | Loss: 0.5802 =====
+=====[Train] Epoch: 26 | Iter: 599 | Loss: 0.5720 =====
+=====[Train] Epoch: 26 | Iter: 699 | Loss: 0.8570 =====
+=====[Train] Epoch: 26 | Iter: 799 | Loss: 0.4257 =====
+=====[Train] Epoch: 26 | Iter: 899 | Loss: 0.5964 =====
+=====[Train] Epoch: 26 | Iter: 999 | Loss: 0.4714 =====
+=====[Train] Epoch: 26 | Iter: 1099 | Loss: 0.5205 =====
+=====[Train] Epoch: 26 | Iter: 1199 | Loss: 0.8152 =====
+=====[Train] Epoch: 26 | Iter: 1299 | Loss: 0.7410 =====
+=====[Train] Epoch: 26 | Iter: 1399 | Loss: 0.5869 =====
+===== EPOCH [26]: Accuracy: 0.761470 | mIoU: 0.311793 =====
+
+=====Best IoU Is: 0.345417 =====
+=====[Train] Epoch: 27 | Iter: 99 | Loss: 0.5529 =====
+=====[Train] Epoch: 27 | Iter: 199 | Loss: 0.6770 =====
+=====[Train] Epoch: 27 | Iter: 299 | Loss: 0.4523 =====
+=====[Train] Epoch: 27 | Iter: 399 | Loss: 0.5985 =====
+=====[Train] Epoch: 27 | Iter: 499 | Loss: 0.6395 =====
+=====[Train] Epoch: 27 | Iter: 599 | Loss: 0.5531 =====
+=====[Train] Epoch: 27 | Iter: 699 | Loss: 0.5062 =====
+=====[Train] Epoch: 27 | Iter: 799 | Loss: 0.8030 =====
+=====[Train] Epoch: 27 | Iter: 899 | Loss: 0.3808 =====
+=====[Train] Epoch: 27 | Iter: 999 | Loss: 0.4487 =====
+=====[Train] Epoch: 27 | Iter: 1099 | Loss: 0.8079 =====
+=====[Train] Epoch: 27 | Iter: 1199 | Loss: 0.7184 =====
+=====[Train] Epoch: 27 | Iter: 1299 | Loss: 0.5279 =====
+=====[Train] Epoch: 27 | Iter: 1399 | Loss: 0.7309 =====
+=====[Train] Epoch: 28 | Iter: 99 | Loss: 0.5043 =====
+=====[Train] Epoch: 28 | Iter: 199 | Loss: 0.5600 =====
+=====[Train] Epoch: 28 | Iter: 299 | Loss: 0.6312 =====
+=====[Train] Epoch: 28 | Iter: 399 | Loss: 0.4454 =====
+=====[Train] Epoch: 28 | Iter: 499 | Loss: 0.6795 =====
+=====[Train] Epoch: 28 | Iter: 599 | Loss: 0.5937 =====
+=====[Train] Epoch: 28 | Iter: 699 | Loss: 0.6268 =====
+=====[Train] Epoch: 28 | Iter: 799 | Loss: 0.5584 =====
+=====[Train] Epoch: 28 | Iter: 899 | Loss: 0.6418 =====
+=====[Train] Epoch: 28 | Iter: 999 | Loss: 0.5380 =====
+=====[Train] Epoch: 28 | Iter: 1099 | Loss: 1.0255 =====
+=====[Train] Epoch: 28 | Iter: 1199 | Loss: 0.3568 =====
+=====[Train] Epoch: 28 | Iter: 1299 | Loss: 0.6617 =====
+=====[Train] Epoch: 28 | Iter: 1399 | Loss: 0.4843 =====
+=====[Train] Epoch: 29 | Iter: 99 | Loss: 0.4735 =====
+=====[Train] Epoch: 29 | Iter: 199 | Loss: 0.5505 =====
+=====[Train] Epoch: 29 | Iter: 299 | Loss: 0.6370 =====
+=====[Train] Epoch: 29 | Iter: 399 | Loss: 0.5039 =====
+=====[Train] Epoch: 29 | Iter: 499 | Loss: 0.5607 =====
+=====[Train] Epoch: 29 | Iter: 599 | Loss: 0.7269 =====
+=====[Train] Epoch: 29 | Iter: 699 | Loss: 0.4885 =====
+=====[Train] Epoch: 29 | Iter: 799 | Loss: 0.8509 =====
+=====[Train] Epoch: 29 | Iter: 899 | Loss: 0.5610 =====
+=====[Train] Epoch: 29 | Iter: 999 | Loss: 0.6094 =====
+=====[Train] Epoch: 29 | Iter: 1099 | Loss: 0.6416 =====
+=====[Train] Epoch: 29 | Iter: 1199 | Loss: 0.6753 =====
+=====[Train] Epoch: 29 | Iter: 1299 | Loss: 0.6475 =====
+=====[Train] Epoch: 29 | Iter: 1399 | Loss: 0.6924 =====
+===== EPOCH [29]: Accuracy: 0.775733 | mIoU: 0.350005 =====
+
+*******************Model Saved*******************
+=====Best IoU Is: 0.350005 =====
+=====[Train] Epoch: 30 | Iter: 99 | Loss: 0.5908 =====
+=====[Train] Epoch: 30 | Iter: 199 | Loss: 0.6636 =====
+=====[Train] Epoch: 30 | Iter: 299 | Loss: 0.5501 =====
+=====[Train] Epoch: 30 | Iter: 399 | Loss: 0.9377 =====
+=====[Train] Epoch: 30 | Iter: 499 | Loss: 0.6698 =====
+=====[Train] Epoch: 30 | Iter: 599 | Loss: 0.4093 =====
+=====[Train] Epoch: 30 | Iter: 699 | Loss: 0.6034 =====
+=====[Train] Epoch: 30 | Iter: 799 | Loss: 0.5600 =====
+=====[Train] Epoch: 30 | Iter: 899 | Loss: 0.6304 =====
+=====[Train] Epoch: 30 | Iter: 999 | Loss: 0.5469 =====
+=====[Train] Epoch: 30 | Iter: 1099 | Loss: 0.6750 =====
+=====[Train] Epoch: 30 | Iter: 1199 | Loss: 0.6162 =====
+=====[Train] Epoch: 30 | Iter: 1299 | Loss: 0.5605 =====
+=====[Train] Epoch: 30 | Iter: 1399 | Loss: 0.7745 =====
+=====[Train] Epoch: 31 | Iter: 99 | Loss: 0.5911 =====
+=====[Train] Epoch: 31 | Iter: 199 | Loss: 0.6982 =====
+=====[Train] Epoch: 31 | Iter: 299 | Loss: 0.5923 =====
+=====[Train] Epoch: 31 | Iter: 399 | Loss: 0.5640 =====
+=====[Train] Epoch: 31 | Iter: 499 | Loss: 0.7925 =====
+=====[Train] Epoch: 31 | Iter: 599 | Loss: 0.4693 =====
+=====[Train] Epoch: 31 | Iter: 699 | Loss: 0.5518 =====
+=====[Train] Epoch: 31 | Iter: 799 | Loss: 0.4130 =====
+=====[Train] Epoch: 31 | Iter: 899 | Loss: 0.6745 =====
+=====[Train] Epoch: 31 | Iter: 999 | Loss: 0.6009 =====
+=====[Train] Epoch: 31 | Iter: 1099 | Loss: 0.6773 =====
+=====[Train] Epoch: 31 | Iter: 1199 | Loss: 0.5157 =====
+=====[Train] Epoch: 31 | Iter: 1299 | Loss: 0.5545 =====
+=====[Train] Epoch: 31 | Iter: 1399 | Loss: 0.5322 =====
+=====[Train] Epoch: 32 | Iter: 99 | Loss: 0.6906 =====
+=====[Train] Epoch: 32 | Iter: 199 | Loss: 0.6524 =====
+=====[Train] Epoch: 32 | Iter: 299 | Loss: 0.4981 =====
+=====[Train] Epoch: 32 | Iter: 399 | Loss: 0.5944 =====
+=====[Train] Epoch: 32 | Iter: 499 | Loss: 0.6362 =====
+=====[Train] Epoch: 32 | Iter: 599 | Loss: 0.3540 =====
+=====[Train] Epoch: 32 | Iter: 699 | Loss: 0.5350 =====
+=====[Train] Epoch: 32 | Iter: 799 | Loss: 0.5236 =====
+=====[Train] Epoch: 32 | Iter: 899 | Loss: 1.1382 =====
+=====[Train] Epoch: 32 | Iter: 999 | Loss: 0.4975 =====
+=====[Train] Epoch: 32 | Iter: 1099 | Loss: 0.9495 =====
+=====[Train] Epoch: 32 | Iter: 1199 | Loss: 0.6189 =====
+=====[Train] Epoch: 32 | Iter: 1299 | Loss: 0.6488 =====
+=====[Train] Epoch: 32 | Iter: 1399 | Loss: 0.5349 =====
+===== EPOCH [32]: Accuracy: 0.774921 | mIoU: 0.331249 =====
+
+=====Best IoU Is: 0.350005 =====
+=====[Train] Epoch: 33 | Iter: 99 | Loss: 0.6441 =====
+=====[Train] Epoch: 33 | Iter: 199 | Loss: 0.7494 =====
+=====[Train] Epoch: 33 | Iter: 299 | Loss: 0.5007 =====
+=====[Train] Epoch: 33 | Iter: 399 | Loss: 0.4657 =====
+=====[Train] Epoch: 33 | Iter: 499 | Loss: 0.7050 =====
+=====[Train] Epoch: 33 | Iter: 599 | Loss: 0.4016 =====
+=====[Train] Epoch: 33 | Iter: 699 | Loss: 0.4225 =====
+=====[Train] Epoch: 33 | Iter: 799 | Loss: 0.5151 =====
+=====[Train] Epoch: 33 | Iter: 899 | Loss: 0.6189 =====
+=====[Train] Epoch: 33 | Iter: 999 | Loss: 0.5058 =====
+=====[Train] Epoch: 33 | Iter: 1099 | Loss: 0.6439 =====
+=====[Train] Epoch: 33 | Iter: 1199 | Loss: 0.5465 =====
+=====[Train] Epoch: 33 | Iter: 1299 | Loss: 0.5893 =====
+=====[Train] Epoch: 33 | Iter: 1399 | Loss: 0.8919 =====
+=====[Train] Epoch: 34 | Iter: 99 | Loss: 0.3660 =====
+=====[Train] Epoch: 34 | Iter: 199 | Loss: 0.5275 =====
+=====[Train] Epoch: 34 | Iter: 299 | Loss: 0.5942 =====
+=====[Train] Epoch: 34 | Iter: 399 | Loss: 0.4959 =====
+=====[Train] Epoch: 34 | Iter: 499 | Loss: 0.5758 =====
+=====[Train] Epoch: 34 | Iter: 599 | Loss: 0.4184 =====
+=====[Train] Epoch: 34 | Iter: 699 | Loss: 0.4790 =====
+=====[Train] Epoch: 34 | Iter: 799 | Loss: 0.5500 =====
+=====[Train] Epoch: 34 | Iter: 899 | Loss: 0.6718 =====
+=====[Train] Epoch: 34 | Iter: 999 | Loss: 0.5766 =====
+=====[Train] Epoch: 34 | Iter: 1099 | Loss: 0.7725 =====
+=====[Train] Epoch: 34 | Iter: 1199 | Loss: 0.4188 =====
+=====[Train] Epoch: 34 | Iter: 1299 | Loss: 0.7277 =====
+=====[Train] Epoch: 34 | Iter: 1399 | Loss: 0.6306 =====
+=====[Train] Epoch: 35 | Iter: 99 | Loss: 0.5098 =====
+=====[Train] Epoch: 35 | Iter: 199 | Loss: 0.5000 =====
+=====[Train] Epoch: 35 | Iter: 299 | Loss: 0.6275 =====
+=====[Train] Epoch: 35 | Iter: 399 | Loss: 0.4683 =====
+=====[Train] Epoch: 35 | Iter: 499 | Loss: 0.7799 =====
+=====[Train] Epoch: 35 | Iter: 599 | Loss: 0.5646 =====
+=====[Train] Epoch: 35 | Iter: 699 | Loss: 0.4946 =====
+=====[Train] Epoch: 35 | Iter: 799 | Loss: 0.5765 =====
+=====[Train] Epoch: 35 | Iter: 899 | Loss: 0.6648 =====
+=====[Train] Epoch: 35 | Iter: 999 | Loss: 0.6346 =====
+=====[Train] Epoch: 35 | Iter: 1099 | Loss: 0.5635 =====
+=====[Train] Epoch: 35 | Iter: 1199 | Loss: 0.5968 =====
+=====[Train] Epoch: 35 | Iter: 1299 | Loss: 0.3248 =====
+=====[Train] Epoch: 35 | Iter: 1399 | Loss: 0.5538 =====
+===== EPOCH [35]: Accuracy: 0.778947 | mIoU: 0.345588 =====
+
+=====Best IoU Is: 0.350005 =====
+=====[Train] Epoch: 36 | Iter: 99 | Loss: 0.7534 =====
+=====[Train] Epoch: 36 | Iter: 199 | Loss: 0.5861 =====
+=====[Train] Epoch: 36 | Iter: 299 | Loss: 0.4324 =====
+=====[Train] Epoch: 36 | Iter: 399 | Loss: 0.7302 =====
+=====[Train] Epoch: 36 | Iter: 499 | Loss: 0.6582 =====
+=====[Train] Epoch: 36 | Iter: 599 | Loss: 0.5184 =====
+=====[Train] Epoch: 36 | Iter: 699 | Loss: 0.5626 =====
+=====[Train] Epoch: 36 | Iter: 799 | Loss: 0.6591 =====
+=====[Train] Epoch: 36 | Iter: 899 | Loss: 0.5027 =====
+=====[Train] Epoch: 36 | Iter: 999 | Loss: 0.5657 =====
+=====[Train] Epoch: 36 | Iter: 1099 | Loss: 0.6046 =====
+=====[Train] Epoch: 36 | Iter: 1199 | Loss: 0.3138 =====
+=====[Train] Epoch: 36 | Iter: 1299 | Loss: 0.5906 =====
+=====[Train] Epoch: 36 | Iter: 1399 | Loss: 0.5343 =====
+=====[Train] Epoch: 37 | Iter: 99 | Loss: 0.5801 =====
+=====[Train] Epoch: 37 | Iter: 199 | Loss: 0.5042 =====
+=====[Train] Epoch: 37 | Iter: 299 | Loss: 0.6527 =====
+=====[Train] Epoch: 37 | Iter: 399 | Loss: 0.7134 =====
+=====[Train] Epoch: 37 | Iter: 499 | Loss: 0.5347 =====
+=====[Train] Epoch: 37 | Iter: 599 | Loss: 0.5452 =====
+=====[Train] Epoch: 37 | Iter: 699 | Loss: 0.5608 =====
+=====[Train] Epoch: 37 | Iter: 799 | Loss: 0.6876 =====
+=====[Train] Epoch: 37 | Iter: 899 | Loss: 0.6435 =====
+=====[Train] Epoch: 37 | Iter: 999 | Loss: 0.5850 =====
+=====[Train] Epoch: 37 | Iter: 1099 | Loss: 0.6342 =====
+=====[Train] Epoch: 37 | Iter: 1199 | Loss: 0.5355 =====
+=====[Train] Epoch: 37 | Iter: 1299 | Loss: 0.6863 =====
+=====[Train] Epoch: 37 | Iter: 1399 | Loss: 0.6544 =====
+=====[Train] Epoch: 38 | Iter: 99 | Loss: 0.6119 =====
+=====[Train] Epoch: 38 | Iter: 199 | Loss: 0.7320 =====
+=====[Train] Epoch: 38 | Iter: 299 | Loss: 0.5205 =====
+=====[Train] Epoch: 38 | Iter: 399 | Loss: 0.4960 =====
+=====[Train] Epoch: 38 | Iter: 499 | Loss: 0.5476 =====
+=====[Train] Epoch: 38 | Iter: 599 | Loss: 0.8001 =====
+=====[Train] Epoch: 38 | Iter: 699 | Loss: 0.8840 =====
+=====[Train] Epoch: 38 | Iter: 799 | Loss: 0.5017 =====
+=====[Train] Epoch: 38 | Iter: 899 | Loss: 0.5977 =====
+=====[Train] Epoch: 38 | Iter: 999 | Loss: 0.4588 =====
+=====[Train] Epoch: 38 | Iter: 1099 | Loss: 0.4471 =====
+=====[Train] Epoch: 38 | Iter: 1199 | Loss: 0.6677 =====
+=====[Train] Epoch: 38 | Iter: 1299 | Loss: 0.4801 =====
+=====[Train] Epoch: 38 | Iter: 1399 | Loss: 0.7233 =====
+===== EPOCH [38]: Accuracy: 0.767445 | mIoU: 0.358449 =====
+
+*******************Model Saved*******************
+=====Best IoU Is: 0.358449 =====
+=====[Train] Epoch: 39 | Iter: 99 | Loss: 0.7461 =====
+=====[Train] Epoch: 39 | Iter: 199 | Loss: 0.4793 =====
+=====[Train] Epoch: 39 | Iter: 299 | Loss: 0.6602 =====
+=====[Train] Epoch: 39 | Iter: 399 | Loss: 0.6879 =====
+=====[Train] Epoch: 39 | Iter: 499 | Loss: 0.4618 =====
+=====[Train] Epoch: 39 | Iter: 599 | Loss: 0.4596 =====
+=====[Train] Epoch: 39 | Iter: 699 | Loss: 0.8071 =====
+=====[Train] Epoch: 39 | Iter: 799 | Loss: 0.7930 =====
+=====[Train] Epoch: 39 | Iter: 899 | Loss: 0.7945 =====
+=====[Train] Epoch: 39 | Iter: 999 | Loss: 0.7368 =====
+=====[Train] Epoch: 39 | Iter: 1099 | Loss: 0.4686 =====
+=====[Train] Epoch: 39 | Iter: 1199 | Loss: 0.5072 =====
+=====[Train] Epoch: 39 | Iter: 1299 | Loss: 0.5066 =====
+=====[Train] Epoch: 39 | Iter: 1399 | Loss: 0.7871 =====
+=====[Train] Epoch: 40 | Iter: 99 | Loss: 0.6352 =====
+=====[Train] Epoch: 40 | Iter: 199 | Loss: 0.5120 =====
+=====[Train] Epoch: 40 | Iter: 299 | Loss: 0.4638 =====
+=====[Train] Epoch: 40 | Iter: 399 | Loss: 0.4980 =====
+=====[Train] Epoch: 40 | Iter: 499 | Loss: 0.5479 =====
+=====[Train] Epoch: 40 | Iter: 599 | Loss: 0.6241 =====
+=====[Train] Epoch: 40 | Iter: 699 | Loss: 0.6173 =====
+=====[Train] Epoch: 40 | Iter: 799 | Loss: 0.6425 =====
+=====[Train] Epoch: 40 | Iter: 899 | Loss: 0.4481 =====
+=====[Train] Epoch: 40 | Iter: 999 | Loss: 0.5527 =====
+=====[Train] Epoch: 40 | Iter: 1099 | Loss: 0.4889 =====
+=====[Train] Epoch: 40 | Iter: 1199 | Loss: 0.5552 =====
+=====[Train] Epoch: 40 | Iter: 1299 | Loss: 0.6155 =====
+=====[Train] Epoch: 40 | Iter: 1399 | Loss: 0.5751 =====
+=====[Train] Epoch: 41 | Iter: 99 | Loss: 0.5605 =====
+=====[Train] Epoch: 41 | Iter: 199 | Loss: 0.4432 =====
+=====[Train] Epoch: 41 | Iter: 299 | Loss: 0.5872 =====
+=====[Train] Epoch: 41 | Iter: 399 | Loss: 0.7975 =====
+=====[Train] Epoch: 41 | Iter: 499 | Loss: 0.5007 =====
+=====[Train] Epoch: 41 | Iter: 599 | Loss: 0.5624 =====
+=====[Train] Epoch: 41 | Iter: 699 | Loss: 0.4521 =====
+=====[Train] Epoch: 41 | Iter: 799 | Loss: 0.5390 =====
+=====[Train] Epoch: 41 | Iter: 899 | Loss: 0.8083 =====
+=====[Train] Epoch: 41 | Iter: 999 | Loss: 0.4800 =====
+=====[Train] Epoch: 41 | Iter: 1099 | Loss: 0.4733 =====
+=====[Train] Epoch: 41 | Iter: 1199 | Loss: 0.4868 =====
+=====[Train] Epoch: 41 | Iter: 1299 | Loss: 0.6828 =====
+=====[Train] Epoch: 41 | Iter: 1399 | Loss: 0.5929 =====
+===== EPOCH [41]: Accuracy: 0.774844 | mIoU: 0.328709 =====
+
+=====Best IoU Is: 0.358449 =====
+=====[Train] Epoch: 42 | Iter: 99 | Loss: 0.5814 =====
+=====[Train] Epoch: 42 | Iter: 199 | Loss: 0.5606 =====
+=====[Train] Epoch: 42 | Iter: 299 | Loss: 0.5889 =====
+=====[Train] Epoch: 42 | Iter: 399 | Loss: 0.6421 =====
+=====[Train] Epoch: 42 | Iter: 499 | Loss: 0.8779 =====
+=====[Train] Epoch: 42 | Iter: 599 | Loss: 0.7168 =====
+=====[Train] Epoch: 42 | Iter: 699 | Loss: 0.7671 =====
+=====[Train] Epoch: 42 | Iter: 799 | Loss: 0.5698 =====
+=====[Train] Epoch: 42 | Iter: 899 | Loss: 0.5562 =====
+=====[Train] Epoch: 42 | Iter: 999 | Loss: 0.4849 =====
+=====[Train] Epoch: 42 | Iter: 1099 | Loss: 0.4923 =====
+=====[Train] Epoch: 42 | Iter: 1199 | Loss: 0.5162 =====
+=====[Train] Epoch: 42 | Iter: 1299 | Loss: 0.6395 =====
+=====[Train] Epoch: 42 | Iter: 1399 | Loss: 0.4854 =====
+=====[Train] Epoch: 43 | Iter: 99 | Loss: 0.6820 =====
+=====[Train] Epoch: 43 | Iter: 199 | Loss: 0.4972 =====
+=====[Train] Epoch: 43 | Iter: 299 | Loss: 0.5394 =====
+=====[Train] Epoch: 43 | Iter: 399 | Loss: 0.5472 =====
+=====[Train] Epoch: 43 | Iter: 499 | Loss: 0.7263 =====
+=====[Train] Epoch: 43 | Iter: 599 | Loss: 0.4915 =====
+=====[Train] Epoch: 43 | Iter: 699 | Loss: 0.7915 =====
+=====[Train] Epoch: 43 | Iter: 799 | Loss: 0.7395 =====
+=====[Train] Epoch: 43 | Iter: 899 | Loss: 0.6166 =====
+=====[Train] Epoch: 43 | Iter: 999 | Loss: 0.6264 =====
+=====[Train] Epoch: 43 | Iter: 1099 | Loss: 0.4599 =====
+=====[Train] Epoch: 43 | Iter: 1199 | Loss: 0.3651 =====
+=====[Train] Epoch: 43 | Iter: 1299 | Loss: 0.5170 =====
+=====[Train] Epoch: 43 | Iter: 1399 | Loss: 0.6687 =====
+=====[Train] Epoch: 44 | Iter: 99 | Loss: 0.6118 =====
+=====[Train] Epoch: 44 | Iter: 199 | Loss: 0.6651 =====
+=====[Train] Epoch: 44 | Iter: 299 | Loss: 0.5814 =====
+=====[Train] Epoch: 44 | Iter: 399 | Loss: 0.4122 =====
+=====[Train] Epoch: 44 | Iter: 499 | Loss: 0.6244 =====
+=====[Train] Epoch: 44 | Iter: 599 | Loss: 0.4545 =====
+=====[Train] Epoch: 44 | Iter: 699 | Loss: 0.6562 =====
+=====[Train] Epoch: 44 | Iter: 799 | Loss: 0.5191 =====
+=====[Train] Epoch: 44 | Iter: 899 | Loss: 0.5131 =====
+=====[Train] Epoch: 44 | Iter: 999 | Loss: 0.4219 =====
+=====[Train] Epoch: 44 | Iter: 1099 | Loss: 0.6651 =====
+=====[Train] Epoch: 44 | Iter: 1199 | Loss: 0.3668 =====
+=====[Train] Epoch: 44 | Iter: 1299 | Loss: 0.6273 =====
+=====[Train] Epoch: 44 | Iter: 1399 | Loss: 0.7553 =====
+===== EPOCH [44]: Accuracy: 0.776461 | mIoU: 0.380840 =====
+
+*******************Model Saved*******************
+=====Best IoU Is: 0.380840 =====
+=====[Train] Epoch: 45 | Iter: 99 | Loss: 0.6121 =====
+=====[Train] Epoch: 45 | Iter: 199 | Loss: 0.6953 =====
+=====[Train] Epoch: 45 | Iter: 299 | Loss: 0.5023 =====
+=====[Train] Epoch: 45 | Iter: 399 | Loss: 0.5557 =====
+=====[Train] Epoch: 45 | Iter: 499 | Loss: 0.8180 =====
+=====[Train] Epoch: 45 | Iter: 599 | Loss: 0.7084 =====
+=====[Train] Epoch: 45 | Iter: 699 | Loss: 0.4869 =====
+=====[Train] Epoch: 45 | Iter: 799 | Loss: 0.6614 =====
+=====[Train] Epoch: 45 | Iter: 899 | Loss: 0.6560 =====
+=====[Train] Epoch: 45 | Iter: 999 | Loss: 0.6915 =====
+=====[Train] Epoch: 45 | Iter: 1099 | Loss: 0.5330 =====
+=====[Train] Epoch: 45 | Iter: 1199 | Loss: 0.5780 =====
+=====[Train] Epoch: 45 | Iter: 1299 | Loss: 0.5620 =====
+=====[Train] Epoch: 45 | Iter: 1399 | Loss: 0.5870 =====
+=====[Train] Epoch: 46 | Iter: 99 | Loss: 0.7237 =====
+=====[Train] Epoch: 46 | Iter: 199 | Loss: 0.5426 =====
+=====[Train] Epoch: 46 | Iter: 299 | Loss: 0.5672 =====
+=====[Train] Epoch: 46 | Iter: 399 | Loss: 0.5366 =====
+=====[Train] Epoch: 46 | Iter: 499 | Loss: 0.5326 =====
+=====[Train] Epoch: 46 | Iter: 599 | Loss: 0.5634 =====
+=====[Train] Epoch: 46 | Iter: 699 | Loss: 0.7766 =====
+=====[Train] Epoch: 46 | Iter: 799 | Loss: 0.6189 =====
+=====[Train] Epoch: 46 | Iter: 899 | Loss: 0.4701 =====
+=====[Train] Epoch: 46 | Iter: 999 | Loss: 0.7580 =====
+=====[Train] Epoch: 46 | Iter: 1099 | Loss: 0.9151 =====
+=====[Train] Epoch: 46 | Iter: 1199 | Loss: 0.7861 =====
+=====[Train] Epoch: 46 | Iter: 1299 | Loss: 0.7940 =====
+=====[Train] Epoch: 46 | Iter: 1399 | Loss: 0.6361 =====
+=====[Train] Epoch: 47 | Iter: 99 | Loss: 0.5028 =====
+=====[Train] Epoch: 47 | Iter: 199 | Loss: 0.4337 =====
+=====[Train] Epoch: 47 | Iter: 299 | Loss: 0.6303 =====
+=====[Train] Epoch: 47 | Iter: 399 | Loss: 0.5158 =====
+=====[Train] Epoch: 47 | Iter: 499 | Loss: 0.4124 =====
+=====[Train] Epoch: 47 | Iter: 599 | Loss: 0.6880 =====
+=====[Train] Epoch: 47 | Iter: 699 | Loss: 0.6286 =====
+=====[Train] Epoch: 47 | Iter: 799 | Loss: 0.5560 =====
+=====[Train] Epoch: 47 | Iter: 899 | Loss: 0.7111 =====
+=====[Train] Epoch: 47 | Iter: 999 | Loss: 0.3972 =====
+=====[Train] Epoch: 47 | Iter: 1099 | Loss: 0.5486 =====
+=====[Train] Epoch: 47 | Iter: 1199 | Loss: 0.3869 =====
+=====[Train] Epoch: 47 | Iter: 1299 | Loss: 0.5053 =====
+=====[Train] Epoch: 47 | Iter: 1399 | Loss: 0.5113 =====
+===== EPOCH [47]: Accuracy: 0.764171 | mIoU: 0.317707 =====
+
+=====Best IoU Is: 0.380840 =====
+=====[Train] Epoch: 48 | Iter: 99 | Loss: 0.7418 =====
+=====[Train] Epoch: 48 | Iter: 199 | Loss: 0.6979 =====
+=====[Train] Epoch: 48 | Iter: 299 | Loss: 0.4860 =====
+=====[Train] Epoch: 48 | Iter: 399 | Loss: 0.4774 =====
+=====[Train] Epoch: 48 | Iter: 499 | Loss: 0.5329 =====
+=====[Train] Epoch: 48 | Iter: 599 | Loss: 0.4606 =====
+=====[Train] Epoch: 48 | Iter: 699 | Loss: 0.7400 =====
+=====[Train] Epoch: 48 | Iter: 799 | Loss: 0.5540 =====
+=====[Train] Epoch: 48 | Iter: 899 | Loss: 0.7535 =====
+=====[Train] Epoch: 48 | Iter: 999 | Loss: 0.4592 =====
+=====[Train] Epoch: 48 | Iter: 1099 | Loss: 0.6393 =====
+=====[Train] Epoch: 48 | Iter: 1199 | Loss: 0.4655 =====
+=====[Train] Epoch: 48 | Iter: 1299 | Loss: 0.5880 =====
+=====[Train] Epoch: 48 | Iter: 1399 | Loss: 0.4790 =====
+=====[Train] Epoch: 49 | Iter: 99 | Loss: 0.5187 =====
+=====[Train] Epoch: 49 | Iter: 199 | Loss: 0.4165 =====
+=====[Train] Epoch: 49 | Iter: 299 | Loss: 0.7694 =====
+=====[Train] Epoch: 49 | Iter: 399 | Loss: 0.5713 =====
+=====[Train] Epoch: 49 | Iter: 499 | Loss: 0.4250 =====
+=====[Train] Epoch: 49 | Iter: 599 | Loss: 0.5328 =====
+=====[Train] Epoch: 49 | Iter: 699 | Loss: 0.5873 =====
+=====[Train] Epoch: 49 | Iter: 799 | Loss: 0.6199 =====
+=====[Train] Epoch: 49 | Iter: 899 | Loss: 0.4467 =====
+=====[Train] Epoch: 49 | Iter: 999 | Loss: 0.6024 =====
+=====[Train] Epoch: 49 | Iter: 1099 | Loss: 0.5934 =====
+=====[Train] Epoch: 49 | Iter: 1199 | Loss: 0.7395 =====
+=====[Train] Epoch: 49 | Iter: 1299 | Loss: 0.5172 =====
+=====[Train] Epoch: 49 | Iter: 1399 | Loss: 0.4230 =====
